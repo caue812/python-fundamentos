@@ -75,7 +75,7 @@ def numero_inteiro():
     
     if numero < 15:
         print("Número é menor que 15")
-
+ 
     else:
         print("Número é maior que 15")
 
