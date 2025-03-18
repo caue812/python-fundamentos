@@ -22,7 +22,27 @@ def __solicitar_nome_colaborador() -> str:
     nome_colaborador = input("Digite o nome do colaborador: ")
     return nome_colaborador
 
-def __solicitar_horas_trabalhadas():
+def __solicitar_horas_trabalhadas() -> int:
+    horas_trabalhadas = 0 
+    while horas_trabalhadas <= 0:
+        try:
+            horas_trabalhadas = int(
+                input("Digite a quantidade de horas trabalhadas: ").strip()
+            )
+        except ValueError as error:
+            print("A quantidade de horas deve ser um número inteiro")
+        
+    return horas_trabalhadas
+
+def __solicitar_cargo() -> str:
+    cargos_disponiveis = ["Junior", "Pleno", "Senior"]
+
+    cargo = ""
+    while cargo not in cargos_disponiveis:
+        cargo = input("Digite o cargo: ")
+        if cargo not in cargos_disponiveis:
+            print("CArgo inválido, cargo disponiveis:", cargos_disponiveis)
+    return cargo
 
     
 
